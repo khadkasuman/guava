@@ -154,7 +154,7 @@ public final class Maps {
    * @return an immutable map containing those entries
    * @since 14.0
    */
-  @GwtCompatible(serializable = true)
+  @GwtCompatible
   public static <K extends Enum<K>, V> ImmutableMap<K, V> immutableEnumMap(
       Map<K, ? extends V> map) {
     if (map instanceof ImmutableEnumMap) {
@@ -1467,7 +1467,7 @@ public final class Maps {
    * @param key the key to be associated with the returned entry
    * @param value the value to be associated with the returned entry
    */
-  @GwtCompatible(serializable = true)
+  @GwtCompatible
   public static <K extends @Nullable Object, V extends @Nullable Object> Entry<K, V> immutableEntry(
       @ParametricNullness K key, @ParametricNullness V value) {
     return new ImmutableEntry<>(key, value);
@@ -3363,6 +3363,7 @@ public final class Maps {
       extends FilteredEntryMap<K, V> implements BiMap<K, V> {
     @RetainedWith private final BiMap<V, K> inverse;
 
+    @SuppressWarnings("nullness") // TODO: b/423853632 - Remove after checker is fixed.
     private static <K extends @Nullable Object, V extends @Nullable Object>
         Predicate<Entry<V, K>> inversePredicate(Predicate<? super Entry<K, V>> forwardPredicate) {
       return input -> forwardPredicate.apply(immutableEntry(input.getValue(), input.getKey()));
