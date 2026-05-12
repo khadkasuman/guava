@@ -59,8 +59,6 @@ public class AtomicDoubleArrayTest extends JSR166TestCase {
     assertEquals(Double.doubleToRawLongBits(x), Double.doubleToRawLongBits(y));
   }
 
-  @J2ktIncompatible
-  @GwtIncompatible // NullPointerTester
   public void testNulls() {
     new NullPointerTester().testAllPublicStaticMethods(AtomicDoubleArray.class);
     new NullPointerTester().testAllPublicConstructors(AtomicDoubleArray.class);

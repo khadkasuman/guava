@@ -667,7 +667,7 @@ public abstract class ImmutableMultiset<E> extends ImmutableCollection<E> implem
       return copyOf(multiset);
     }
 
-    @GwtIncompatible @J2ktIncompatible private static final long serialVersionUID = 0;
+    @GwtIncompatible private static final long serialVersionUID = 0;
   }
 
   @GwtIncompatible @J2ktIncompatible   private static final long serialVersionUID = 0xcafebabe;

@@ -684,7 +684,6 @@ public class TreeRangeSetTest extends AbstractRangeSetTest {
         .inOrder();
   }
 
-  @GwtIncompatible // SerializableTester
   public void testSerialization() {
     RangeSet<Integer> rangeSet = TreeRangeSet.create();
     rangeSet.add(Range.closed(3, 10));

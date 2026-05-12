@@ -1089,7 +1089,6 @@ public final class Maps {
     }
 
     @Override
-    @GwtIncompatible // Spliterator
     Spliterator<Entry<K, V>> entrySpliterator() {
       return CollectSpliterators.map(
           set.spliterator(),
